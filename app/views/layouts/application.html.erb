@@ -13,10 +13,15 @@
   <div class="header main_header clearfix">
     <div class="wrapper">
       <div id="logo">
-        <p>Practice Code Rails Forum</p>
+        <p><%= link_to "Practice Code Rails Forum", root_path %></p>
       </div>
       <div id="buttons">
-        <%= link_to "New Post", new_post_path %>
+        <% if user_signed_in?  %>
+          <%= link_to "New Post", new_post_path %>
+        <% else %>
+          <%= link_to "Sign up", new_user_registration_path %>
+          <%= link_to "Sign in", new_user_session_path %>
+        <% end %>
       </div>
     </div>
   </div>
