@@ -5,13 +5,31 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css' rel='stylesheet'>
 </head>
 <body>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <div class="header main_header clearfix">
+    <div class="wrapper">
+      <div id="logo">
+        <p>Practice Code Rails Forum</p>
+      </div>
+      <div id="buttons">
+        <%= link_to "New Post", new_post_path %>
+      </div>
+    </div>
+  </div>
 
-  <%= yield %>
+  <div class="wrapper">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  </div>
+
+  <div class="wrapper">
+    <%= yield %>
+  </div>
+
 
 </body>
 </html>
